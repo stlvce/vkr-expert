@@ -1,7 +1,6 @@
 from typing import TypedDict, List
 
 
-# TODO использовать pydantic
 class BuildingInfo(TypedDict):
     id: int
     x: int

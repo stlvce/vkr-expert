@@ -7,9 +7,14 @@ db = [{"id": 1, "relationship": "garage-house", "distance": 3,
 
 
 def receive_tip(relationship: str, distance: float) -> Union[str, None]:
-    # Поиск в бд по отношению
-    # Если нет, то возвращать None
+    """ Метод для получения совета """
 
-    # Сравнение дистанций и возвращение совета
-    # Если все нормально возращать None
+    # Поиск в бд по отношению
+    rule = {}
+
+    # Если правило есть в базе знаний, то расстояние в нем и переданое сравнивается.
+    if rule and distance < rule["distance"]:
+        return rule["tip_text"]
+
+    # Если нет правила или расстояние удовалетворяет норме возращать None
     return None
